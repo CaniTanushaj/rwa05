@@ -12,10 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[App\Http\Controllers\AutiKontroler::class,'index'])->name('welcome.index');
+Route::get('/auti/{product}',[App\Http\Controllers\AutiKontroler::class,'show'])->name('kartica');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::get('/Onama', function () {
@@ -30,3 +29,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+

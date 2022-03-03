@@ -13,17 +13,17 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo">Auto Salon App</label>
+      <label class="logo">Auto Salon</label>
       <ul>
-        <li><a href="{{ url('/') }}">Početna</a></li></a>
+        <li><a href="{{ url('/') }}" class="nvbr">Početna</a></li></a>
         <li><a class="active" href="{{ url('/Onama') }}">O nama</a></li>
         @if (Route::has('login'))
         @auth
-        <li> <a href="{{ url('/home') }}" class="">Odjava</a></li>
+        <li> <a href="{{ url('/home') }}" class="nvbr">{{ Auth::user()->name }}</a></li>
         @else
-        <li> <a href="{{ route('login') }}" class="">Prijava</a></li>
+        <li> <a href="{{ route('login') }}" class="nvbr">Prijava</a></li>
         @if (Route::has('register'))
-        <li><a href="{{ route('register') }}" class="">Registracija</a></li>   
+        <li><a href="{{ route('register') }}" class="nvbr">Registracija</a></li>   
       
       @endif
                     @endauth
