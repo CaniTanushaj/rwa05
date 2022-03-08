@@ -79,6 +79,7 @@
 <div class="paginacijag">
 <div class="paginacija">
 {{$products->links("pagination::bootstrap-4")}}
+ 
 </div>
 </div>
   </body>

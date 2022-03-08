@@ -19,7 +19,7 @@ class AutiKontroler extends Controller
         if(request()->category){
             $products=Auti::with('kategorijas')->whereHas('kategorijas', function($query){
                 $query->where('Tip',request()->category);
-            })->get();
+            })->paginate(6);
             $categories=Kategorija::all();
         }
         else{
@@ -28,10 +28,22 @@ class AutiKontroler extends Controller
         }  
 
         if(request()->sort=='low_high'){
-            $products = $products->sortBy('Cijena');
-        };
-        if(request()->sort=='high_low'){
-            $products = $products->sortByDesc('Cijena');
+            if(request()->category){
+                $products=Auti::with('kategorijas')->orderBy('Cijena','ASC')->whereHas('kategorijas', function($query){
+                    $query->where('Tip',request()->category);
+                })->paginate(6);
+            }
+            else {$products = Auti::orderBy('Cijena','ASC')->paginate(6);}
+            
+        }
+        elseif(request()->sort=='high_low'){
+            if(request()->category){
+                $products=Auti::with('kategorijas')->orderBy('Cijena','DESC')->whereHas('kategorijas', function($query){
+                    $query->where('Tip',request()->category);
+                })->paginate(6);
+            }
+            else {$products = Auti::orderBy('Cijena','DESC')->paginate(6);}
+            
         }
         return view('welcome')->with([
             'products'=>$products,
