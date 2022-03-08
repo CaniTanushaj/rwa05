@@ -137,6 +137,9 @@ section{
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.322), 0 6px 20px 0 rgba(0, 0, 0, 0.329);
 
 }
+.deskripcija-auta{
+  font-size: 15px;
+}
 .box3{
   flex:1;
   margin: 25px;
@@ -166,7 +169,12 @@ section{
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
+.content{
+  width: 100%;
+}
+.naziv{
+  text-align: center;
+}
 .card{
   margin: 10px;
   border: 1px #ccc solid;

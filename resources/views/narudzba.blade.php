@@ -79,8 +79,8 @@
         <div class="content">
         <div class="naziv">
         {{$product->Marka}}
-        {{$product->Model}}
-        {{$product->Godina}}<br>
+        {{$product->Model}}<br>
+        {{$product->Godina}}|
         {{$product->Cijena}} KM
 </div>
 </form>

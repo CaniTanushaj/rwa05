@@ -55,7 +55,7 @@
         <div class="flex2info">
           <div class="flex2infoo">
         <h2>{{$product->Marka}} {{$product->Model}}</h2>
-        <p>
+        <p class="deskripcija-auta">
         {{$product->Deskripcija}}
 </p>
         </div>
@@ -93,7 +93,7 @@
       <h3>Mozda vam se svidi</h3>
     </div>
     <div class="container">
-      @foreach($mozdavamsesvidi as $product)
+       @foreach($mozdavamsesvidi as $product)
       <a href="{{  route('kartica',$product->slug) }}">
       <div class="card">
         <div class="img8">
@@ -101,12 +101,14 @@
 </div>
         <div class="content">
         <div class="naziv">
-        {{$product->Marka}}
-        {{$product->Model}}
-        {{$product->Godina}}
+        <h2>{{$product->Marka}}
+        {{$product->Model}}</h2>
 </div>
-
-<a href="{{route('narudzba',$product->slug)}}"><button class="dropbtn">Naruci</button></a>
+  <div class="contentt">
+   <p>Godiste: {{$product->Godina}}|
+   Cijena: {{$product->Cijena}}|
+   Kilometraza: {{$product->Kilometraza}}</p>
+</div>
 </div>
 </div>
 </a>
