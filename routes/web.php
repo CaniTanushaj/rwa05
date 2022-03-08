@@ -16,9 +16,14 @@ Route::get('/',[App\Http\Controllers\AutiKontroler::class,'index'])->name('welco
 Route::get('/auti/{product}',[App\Http\Controllers\AutiKontroler::class,'show'])->name('kartica');
 
 
+Route::get('/auti/{product}/narudzba',[App\Http\Controllers\AutiKontroler::class,'narudzba'])->name('narudzba')->middleware('auth');
 
 Route::get('/Onama', function () {
     return view('Onama');
+});
+
+Route::get('/hvala', function () {
+    return view('hvala');
 });
 
 
@@ -34,4 +39,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::post('unos',[App\Http\Controllers\AutiKontroler::class,'insert'])->middleware('auth');;
 

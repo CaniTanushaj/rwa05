@@ -34,51 +34,10 @@
     @endif
       </ul>
     </nav>
-    <div class="sortiranje">
-    <div class="dropdown">
-  <button class="dropbtn">Tip</button>
-  <div class="dropdown-content">
-  @foreach($categories as $category)
-  <a href="{{route('welcome.index',['category'=>$category->Tip])}}">{{$category->Tip}}</a>
-      @endforeach
-  </div>
-</div>
-
-      
-<div class="dropdown">
-  <button class="dropbtn">Cijena</button>
-  <div class="dropdown-content">
-  <a href="{{route('welcome.index',['category'=>request()->category,'sort'=>'low_high'])}}">Uzlazno</a>
-  <a href="{{route('welcome.index',['category'=>request()->category,'sort'=>'high_low'])}}">Silazno</a>
-  </div>
-</div>
-      
-</div>
-    <div class="container">
-      @foreach($products as $product)
-      <a href="{{  route('kartica',$product->slug) }}">
-      <div class="card">
-        <div class="img8">
-        <img src="{{asset('storage/'.$product->slika)}}" class="slike-auta">
-</div>
-        <div class="content">
-        <div class="naziv">
-        <h2>{{$product->Marka}}
-        {{$product->Model}}</h2>
-</div>
-  <div class="contentt">
-   <p>Godiste: {{$product->Godina}}|
-   Cijena: {{$product->Cijena}}|
-   Kilometraza: {{$product->Kilometraza}}</p>
-</div>
-</div>
-</div>
-</a>
-      @endforeach
-</div>
-<div class="paginacijag">
-<div class="paginacija">
-{{$products->links("pagination::bootstrap-4")}}
+    <div class="hvala">
+        <div class="podhvala">
+        <h1>Uspješna rezervacija!</h1>
+        <button class="dropbtn">Vrati se na početak</button>
 </div>
 </div>
   </body>

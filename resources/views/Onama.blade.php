@@ -43,7 +43,7 @@
         Hasan Tanushaj i Mateo Vukoja su studenti treće godine Fakulteta strojarstva, računarstva i elektrotehnike sveučilišta u Mostaru. Kao veliki obožavatelji automobila odlučili smo kroz projekt omogućiti olakšice kod procesa kupnje, servisiranja i potrage odgovarajućeg automobila. Kroz našu aplikaciju možete personalizirati ponudu automobila i raznih usluga koje se nude na tržištu. Na prvom mjestu nam je ostvarivanje korisnikovih zahtjeva i uspješna suradnja. 
     </p>
     </div>
-    <div class="box"><img src="{{asset('/img/MV.jpeg')}}" class="slike">
+    <div class="box" id="mateo"><img src="{{asset('/img/MV.jpeg')}}" class="slike">
     <li>Ime i prezime: Mateo Vukoja</li>
       <li>Grad: Široki Brijeg</li>
       <li>Kontakt: 063176304</li></div>

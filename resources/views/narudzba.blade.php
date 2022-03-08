@@ -11,7 +11,7 @@
   </head>
   <body>
   
-    <nav>
+    <nav class>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
@@ -34,52 +34,63 @@
     @endif
       </ul>
     </nav>
-    <div class="sortiranje">
-    <div class="dropdown">
-  <button class="dropbtn">Tip</button>
-  <div class="dropdown-content">
-  @foreach($categories as $category)
-  <a href="{{route('welcome.index',['category'=>$category->Tip])}}">{{$category->Tip}}</a>
-      @endforeach
+    <h1>Rezervacija</h1>
+    
+<div class="narinfo">
+<div class="wrapper">
+  <form action="{{url('unos')}}" method="POST">
+    @csrf
+    <div class="title">Unesite vase podatke</div>
+    <div class="checkout_form">
+       <div class="input_item">
+        <input type="text" name="ime_kartice" placeholder="Ime vlasnika kartice">
+     </div>
+     <div class="input_item">
+        <input type="text" name="email_kartice" placeholder="Email adressa">
+     </div>
+     <div class="input_item">
+       <input type="text" name="broj_kartice" placeholder="0000 0000 0000 0000" data-mask="0000 0000 0000 0000">
+    </div>
+    <div class="input_grp">
+      <div class="input_item">
+        <input type="text" name="exp_kartice" placeholder="MM / GG" data-mask="00 / 00">
+      </div>
+      <div class="input_item">
+        <input type="text" name="pin_kartice" placeholder="* * *" data-mask="0 0 0">
+      </div>
+    </div>
+      <div class="btn">
+         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+         <input type="hidden" name="marka_r" value="{{$product->Marka}}">
+         <input type="hidden" name="model_r" value="{{$product->Model}}">
+         <button type="submit" class="dropbtn">Dalje</button>
+      </div>
   </div>
+</form>
 </div>
 
-      
-<div class="dropdown">
-  <button class="dropbtn">Cijena</button>
-  <div class="dropdown-content">
-  <a href="{{route('welcome.index',['category'=>request()->category,'sort'=>'low_high'])}}">Uzlazno</a>
-  <a href="{{route('welcome.index',['category'=>request()->category,'sort'=>'high_low'])}}">Silazno</a>
-  </div>
-</div>
-      
-</div>
-    <div class="container">
-      @foreach($products as $product)
-      <a href="{{  route('kartica',$product->slug) }}">
+<div class="narauto">
+  <h2>Auto koji rezervirate:</h2>
+<a href="{{  route('kartica',$product->slug) }}">
       <div class="card">
         <div class="img8">
         <img src="{{asset('storage/'.$product->slika)}}" class="slike-auta">
 </div>
         <div class="content">
         <div class="naziv">
-        <h2>{{$product->Marka}}
-        {{$product->Model}}</h2>
+        {{$product->Marka}}
+        {{$product->Model}}
+        {{$product->Godina}}<br>
+        {{$product->Cijena}} KM
 </div>
-  <div class="contentt">
-   <p>Godiste: {{$product->Godina}}|
-   Cijena: {{$product->Cijena}}|
-   Kilometraza: {{$product->Kilometraza}}</p>
-</div>
+</form>
+  
 </div>
 </div>
 </a>
-      @endforeach
-</div>
-<div class="paginacijag">
-<div class="paginacija">
-{{$products->links("pagination::bootstrap-4")}}
 </div>
 </div>
-  </body>
+
+
+    </body>
 </html

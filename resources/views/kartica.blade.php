@@ -53,33 +53,38 @@
         </div>
         </div>
         <div class="flex2info">
+          <div class="flex2infoo">
         <h2>{{$product->Marka}} {{$product->Model}}</h2>
+        <p>
+        {{$product->Deskripcija}}
+</p>
         </div>
         <div class="flex2dugme">
-      
+       <a href="{{route('narudzba',$product->slug)}}"> <button class="dropbtn">Rezerviraj za cijenu od<br> {{$product->CijenaRezervacije}} KM</button></a>
           </div>  
+</div>
       </div>
       <div class="flex3">
-        <b><p>Godiste</p></b>
-        {{$product->Godina}}
+        <b><p class="detalji">Godiste</p></b>
+        <p>{{$product->Godina}}</p>
         <hr>
-        <b><p>Kilometraza</p></b>
-        {{$product->Kilometraza}}
+        <b><p class="detalji">Kilometraza</p></b>
+        <p>{{$product->Kilometraza}}</p>
         <hr>
-        <b><p>Gorivo</p></b>
-        {{$product->Gorivo}}
+        <b><p class="detalji">Gorivo</p></b>
+        <p>{{$product->Gorivo}}</p>
         <hr>
-        <b><p>Tip</p></b>
-        {{$product->Kategorija}}
+        <b><p class="detalji">Tip</p></b>
+        <p>{{$product->Kategorija}}</p>
         <hr>
-        <b><p>Kubikaza</p></b>
-        {{$product->Kubikaza}}
+        <b><p class="detalji">Kubikaza</p></b>
+        <p>{{$product->Kubikaza}}</p>
         <hr>
-        <b><p>Snaga</p></b>
-        {{$product->Snaga}}
+        <b><p class="detalji">Snaga</p></b>
+        <p>{{$product->Snaga}}
         <hr>
-        <b><p>Cijena</p></b>
-        {{$product->Cijena}}
+        <b><p class="detalji">Cijena</p></b>
+        <p>{{$product->Cijena}}</p>
         <hr>
       </div>
     </div>
@@ -101,7 +106,7 @@
         {{$product->Godina}}
 </div>
 
-  <button class="button button1">Naruci</button>
+<a href="{{route('narudzba',$product->slug)}}"><button class="dropbtn">Naruci</button></a>
 </div>
 </div>
 </a>

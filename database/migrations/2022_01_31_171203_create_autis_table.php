@@ -27,7 +27,7 @@ class CreateAutisTable extends Migration
             $table->string('Gorivo');
             $table->string('Mjenjac');
             $table->integer('CijenaRezervacije');
-            $table->boolean('Dostupno');
+            $table->boolean('Dostupno')->default(true);
             $table->integer('Cijena');
             $table->timestamps();
         });

@@ -26,7 +26,7 @@ class AutitablicaSeeder extends Seeder
         'Gorivo'=>'Dizel',
         'Mjenjac'=>'Automatik',
         'CijenaRezervacije'=>100,
-        'Dostupno'=>1,
+         'Dostupno'=>true,
         'Cijena'=>89999,
      ])->kategorijas()->attach(1);
 
@@ -44,7 +44,8 @@ class AutitablicaSeeder extends Seeder
         'Gorivo'=>'Dizel',
         'Mjenjac'=>'Automatik',
         'CijenaRezervacije'=>50,
-        'Dostupno'=>1,
+        'Dostupno'=>true,
+      
         'Cijena'=>29999,
      ])->kategorijas()->attach(2);
 
@@ -62,7 +63,7 @@ class AutitablicaSeeder extends Seeder
         'Gorivo'=>'Dizel',
         'Mjenjac'=>'Automatik',
         'CijenaRezervacije'=>100,
-        'Dostupno'=>1,
+        'Dostupno'=>true,
         'Cijena'=>460000,
      ])->kategorijas()->attach(1);
 
@@ -79,7 +80,7 @@ class AutitablicaSeeder extends Seeder
       'Gorivo'=>'Dizel',
       'Mjenjac'=>'Manuelac',
       'CijenaRezervacije'=>30,
-      'Dostupno'=>1,
+      'Dostupno'=>true,
       'Cijena'=>16999,
    ])->kategorijas()->attach(1);
 
@@ -96,7 +97,7 @@ class AutitablicaSeeder extends Seeder
       'Gorivo'=>'Dizel',
       'Mjenjac'=>'Manuelac',
       'CijenaRezervacije'=>30,
-      'Dostupno'=>1,
+      'Dostupno'=>true,
       'Cijena'=>15500,
    ])->kategorijas()->attach(4);
 
@@ -113,7 +114,7 @@ class AutitablicaSeeder extends Seeder
         'Gorivo'=>'Dizel',
         'Mjenjac'=>'Manuelac',
         'CijenaRezervacije'=>30,
-        'Dostupno'=>1,
+        'Dostupno'=>true,
         'Cijena'=>8900,
    ])->kategorijas()->attach(4);
 
@@ -130,7 +131,7 @@ class AutitablicaSeeder extends Seeder
         'Gorivo'=>'Dizel',
         'Mjenjac'=>'Automatik',
         'CijenaRezervacije'=>50,
-        'Dostupno'=>1,
+        'Dostupno'=>true,
         'Cijena'=>17000,
    ])->kategorijas()->attach(3);
 
@@ -147,7 +148,7 @@ class AutitablicaSeeder extends Seeder
       'Gorivo'=>'Dizel',
       'Mjenjac'=>'Automatik',
       'CijenaRezervacije'=>100,
-      'Dostupno'=>1,
+      'Dostupno'=>true,
       'Cijena'=>370000,
    ])->kategorijas()->attach(2);
 
@@ -164,7 +165,7 @@ class AutitablicaSeeder extends Seeder
         'Gorivo'=>'Struja',
         'Mjenjac'=>'Automatik',
         'CijenaRezervacije'=>100,
-        'Dostupno'=>1,
+        'Dostupno'=>true,
         'Cijena'=>79000,
    ])->kategorijas()->attach(2);
 

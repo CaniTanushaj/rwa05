@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Auti;
 use Illuminate\Http\Request;
 use App\Models\Kategorija;
+use App\Models\Rezervacija;
 
 class AutiKontroler extends Controller
 {
@@ -22,7 +23,7 @@ class AutiKontroler extends Controller
             $categories=Kategorija::all();
         }
         else{
-            $products = Auti::orderBy('created_at','DESC')->get();
+            $products = Auti::orderBy('created_at','DESC')->paginate(6);
         $categories=Kategorija::all();
         }  
 
@@ -77,6 +78,40 @@ class AutiKontroler extends Controller
     
     
     ]);
+    }
+    public function narudzba($slug)
+    {
+        $product=Auti::where('slug',$slug)->firstOrFail();
+        return view('narudzba')->with([
+            
+            'product'=>$product,
+    
+    
+    ]);
+    }
+
+    public function insert(Request $request){
+
+        $request->validate([
+            'ime_kartice' => 'required',
+            'email_kartice' => 'required',
+            'broj_kartice' => 'required',
+            'exp_kartice' => 'required',
+            'pin_kartice' => 'required',
+        ]);
+
+        $rezervacija= new Rezervacija();
+        $rezervacija->user_id=$request->input("user_id");
+        $rezervacija->ime_kartice=$request->input("ime_kartice");
+        $rezervacija->marka_r=$request->input("marka_r");
+        $rezervacija->model_r=$request->input("model_r");
+        $rezervacija->email_kartice=$request->input("email_kartice");
+        $rezervacija->broj_kartice=$request->input("broj_kartice");
+        $rezervacija->exp_kartice=$request->input("exp_kartice");
+        $rezervacija->pin_kartice=$request->input("pin_kartice");
+        $rezervacija->save();
+
+        return redirect('/hvala');
     }
 
     /**
