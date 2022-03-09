@@ -72,7 +72,7 @@
 <div class="narauto">
   <h2>Auto koji rezervirate:</h2>
 <a href="{{  route('kartica',$product->slug) }}">
-      <div class="card">
+      <div class="cardd">
         <div class="img8">
         <img src="{{asset('storage/'.$product->slika)}}" class="slike-auta">
 </div>

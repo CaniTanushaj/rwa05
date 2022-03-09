@@ -23,7 +23,7 @@ class AutiKontroler extends Controller
             $categories=Kategorija::all();
         }
         else{
-            $products = Auti::orderBy('created_at','DESC')->paginate(6);
+            $products = Auti::orderBy('Marka')->paginate(6);
         $categories=Kategorija::all();
         }  
 
