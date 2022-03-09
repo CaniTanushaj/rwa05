@@ -50,7 +50,9 @@
   <div class="dropdown-content">
   <a href="{{route('welcome.index',['category'=>request()->category,'sort'=>'low_high'])}}">Uzlazno</a>
   <a href="{{route('welcome.index',['category'=>request()->category,'sort'=>'high_low'])}}">Silazno</a>
+ 
   </div>
+  <a href="{{url('/')}}"><button class="dropbtn">Abecedno</button></a>
 </div>
       
 </div>
